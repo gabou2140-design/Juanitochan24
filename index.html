@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sala de Reacciones</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000; height: 100vh; overflow: hidden; font-family: sans-serif; }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 80fr 20fr; /* 80% Stream, 20% Chat */
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
 
+        .stream-container { width: 100%; height: 100%; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .chat-container { width: 100%; height: 100%; background: #0b0b0b; }
+
+        .widgets-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            pointer-events: none;
+        }
+        .widget-caja {
+            background: rgba(11, 11, 11, 0.85);
+            color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #53fc18;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        
+        <!-- TU STREAM DE KICK LIMPIO (CON TU USUARIO) -->
+        <div class="stream-container">
+            <iframe src="https://player.kick.com/gabou2140-design" allowfullscreen="true"></iframe>
+        </div>
+
+        <!-- TU CHAT DE KICK -->
+        <div class="chat-container">
+            <iframe src="https://kick.com/popout/gabou2140-design/chat"></iframe>
+        </div>
+
+        <!-- CAPA FLOTANTE PARA TUS METAS -->
+        <div class="widgets-overlay">
+            <div class="widget-caja">
+                <p style="color: #53fc18; margin-bottom: 5px;">METAS DEL MES</p>
+                <p>1 cap. = 1,000 Kicks</p>
+                <p>1 cap. = 3,000 Kicks</p>
+                <p>100 Novias = 30,000 Kicks</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
